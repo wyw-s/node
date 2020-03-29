@@ -1,7 +1,3 @@
-# JS部分；
-
-# DOM-事件：
-
 ## 事件对象；
 
 ### 方法：
@@ -214,7 +210,7 @@
   ```
 
 
-## oncontextmenu;
+### oncontextmenu;
 
 - 在元素中用户右击鼠标时触发并打开上下文菜单。
 
@@ -225,7 +221,7 @@
   ```
 
 
-## onchange();
+### onchange();
 
 - 事件会在域的内容改变时发生。
 
@@ -237,8 +233,6 @@
   ```
 
   
-
-# BOM：
 
 ## window 对象 ;
 
@@ -383,8 +377,6 @@ localStorage();
   ```
 
   
-
-# DOM：
 
 ## DOM方法：
 
@@ -670,9 +662,9 @@ localStorage();
   元素.removeAttribute(属性名)；
   ```
 
-# Array数组：
 
-## 方法：
+
+## 数组方法：
 
 ### push();
 
@@ -913,31 +905,12 @@ localStorage();
     return item>=0;
   });
   console.log(arr_1);
-```
-  
-<img src="assets/1569150265928.png" alt="1569150265928" style="zoom: 50%;" />
-  
-  <img src="assets/1569150249140.png" alt="1569150249140" style="zoom: 50%;" />
-
-### some();
-
-- 该方法主要是用于查找某个值是否在数组中;
-
-- 返回值：是布尔类型；如果存在则返回`true`；否则返回`false`；
-
-- 如果找到第一个满足条件的元素,则终止循环. 不在继续查找；
-
-  ```js
-   var arr=[1,2,3,4,5,6,7,8];
-      //匿名函数里面的形参，可以根据需要传入；
-      var a=arr.some(function (item, index,arr) {
-          //遍历数组并查找满足条件的元素；
-          return item==5;
-      });
-      console.log(a);
   ```
-
+  <img src="assets/1569150265928.png" alt="1569150265928" style="zoom: 50%;" />
   
+   <img src="assets/1569150249140.png" alt="1569150249140" style="zoom: 50%;" />
+
+
 
 ### concat()；
 
@@ -994,8 +967,6 @@ arr.find(funtion(item,index){
   })
 ```
 
-
-
 ### **includes();**
 
 - 判断数组是否包含指定元素；
@@ -1003,9 +974,49 @@ arr.find(funtion(item,index){
 - 一般用于数组中都是普通数据类型，数字、字符串；
 - 如果找到则返回`true`找不到返回`false`；
 
-# 字符串；
+### reduce();
 
-## 方法：
+- 可用于数组元素的累加；
+- 接收一个函数作为参数；
+  - 该函数接收两个参数；
+    - 参数1：为初始值，默认数组的第一项，也可以用于返回值
+    - 参数2：为数组中的每一项，
+    - 参数3：为元素的索引；
+
+```Js
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+var a = arr.reduce((a, b)=>{
+  console.log(a,'====', b)
+  return a+b
+})
+console.log(a) // 45
+```
+
+### some();
+
+- 该方法用于检测数组中的元素是否满足指定条件， 并会依次执行数组的每个元素。
+
+-  如果有一个元素满足条件，则表达式返回*true* , **剩余的元素不会再执行检测**。 
+
+-  如果没有满足条件的元素，则返回false。 
+
+  > **注意：**不会对空数组进行检测。不会改变原始数组。
+
+  ```js
+  // 语法；
+  array.some(function(currentValue,index,arr),thisValue)
+  
+  console.log(Array.prototype)
+  const arr = [1,2,3,4,5,6,7]
+  const arrV = arr.some(item => {
+    return item > 6
+  })
+  console.log(arrV) // true
+  ```
+
+  
+
+## 字符串方法：
 
 ### charAt();
 
@@ -1088,8 +1099,6 @@ arr.find(funtion(item,index){
 
   
 
-# 新增方法、属性；
-
 ## 对象；
 
 1. **URL对象；**
@@ -1118,12 +1127,6 @@ arr.find(funtion(item,index){
    - ![1571142665015](assets/1571142665015.png)
 
      
-
-## 方法；
-
-## 属性；
-
-# 注意问题点；
 
 ## input控件问题；
 
@@ -1168,10 +1171,6 @@ arr.find(funtion(item,index){
    掉 checked 后我们点击按钮而并没有选中的原因）；因为我们点击按钮后此时的状态值的变化我们并没
 
    有保存到本地，页面上的数据是渲染来的；
-
-
-
-# 
 
 
 
